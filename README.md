@@ -1,2 +1,2 @@
 # profile
-My Github profile built in various UI frameworks
+My Github profile built with various UI frameworks

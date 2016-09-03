@@ -1,1 +1,39 @@
-<h1> Welcome {{user}} </h1>
+<div>
+  <div class="jumbotron">
+    <div class="media">
+      <div class="media-left">
+        <a href="{{user.html_url}}">
+          <img class="media-object thumbnail user-profile-pic" src="{{user.avatar_url}}" alt="{{user.name}}">
+        </a>
+      </div>
+      <div class="media-body user-details">
+        <h2> {{user.name}}</h2>
+        <p> {{user.bio}} </p>
+        <p> Lives in {{user.location}} </p>
+        <p ng-if="user.blog">
+          <a class="btn btn-primary btn-lg" href="{{user.blog}}" role="button">Visit Blog</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="repos">
+    <h1> Repositories </h1>
+    <uib-tabset justified="true" active="activeRepoSet">
+      <uib-tab index="0" heading="All"></uib-tab>
+      <uib-tab index="1" heading="Sources"></uib-tab>
+      <uib-tab index="2" heading="Forks"></uib-tab>
+    </uib-tabset>
+
+    <div class="list-group">
+      <a href="#" class="list-group-item" ng-repeat="repo in repos | repoFilter:activeRepoSet">
+        <span class="badge">{{repo.stargazers_count}}</span>
+        <h4 class="list-group-item-heading">{{repo.name}}</h4>
+        <p class="list-group-item-text">{{repo.description}}</p>
+
+      </a>
+    </div>
+
+  </div>
+
+</div>

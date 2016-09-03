@@ -9,3 +9,13 @@
   padding: 16px;
   background-color: #f5f5f5;
 }
+
+.user-profile-pic{
+  height: 192px;
+  width: 192px;
+  margin-top: 20px;
+}
+
+.user-details{
+  padding: 0px 10px;
+}
